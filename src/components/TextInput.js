@@ -30,6 +30,7 @@ const textInputPropTypes = {
     value: PropTypes.string.isRequired,
     requestChange: PropTypes.func.isRequired,
   }),
+  textInputRef: PropTypes.func,
 };
 
 /**
@@ -248,6 +249,7 @@ export default class TextInput extends Component {
     textareaStyle.height = this.state.height;
     return (
       <textarea
+        ref={this.props.textInputRef}
         style={ textareaStyle }
         value = {this.state.inputValue}
         className={ unionClassNames(this.props.className, this._styleId) }

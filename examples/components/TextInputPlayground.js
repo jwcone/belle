@@ -111,6 +111,15 @@ export default React.createClass({
           <TextInput style={{ minHeight: 80 }} />
         </div>
 
+        <h3>Click to focus the TextInput</h3>
+        <div style={{ width: 250 }}>
+          <button onClick={() => (this.focusableTextInput.focus())}>Click To Focus</button>
+          <TextInput
+            placeholder="Focus Test"
+            textInputRef={(elem) => (this.focusableTextInput = elem)}
+          />
+        </div>
+
         {/* Value test */}
         <div style={{ width: 250 }}>
           <textarea value="abc" onChange={ (event) => console.log(event.target.value) } />
